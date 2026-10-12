@@ -252,6 +252,10 @@ p{margin:0}
 .mail-cta:hover{background:var(--blue);color:#fff;gap:20px}
 .mail-cta:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .mail-hint{margin-top:10px;opacity:.55}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.cta-row .mail-cta{margin-top:0}
+.mail-cta.ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1px currentColor}
+.mail-cta.ghost:hover{background:var(--paper);color:var(--ink)}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:28px;opacity:.6}
 
 /* ---------- Visionneuse ---------- */
@@ -301,6 +305,7 @@ p{margin:0}
           <div><dt>Disponibilité</dt><dd><span class="dot"></span>Ouvert aux opportunités en agence</dd></div>
           <div><dt>Mobilité</dt><dd>Tout le Maroc</dd></div>
           <div><dt>Diplôme</dt><dd>Architecte, 2027</dd></div>
+          <div><dt>Portfolio</dt><dd><a href="https://drive.google.com/file/d/1IXaNJQfsGT-6OYRjpzVmiHBmmHLGv0DJ/view?usp=sharing" target="_blank" rel="noopener" style="color:var(--blue)">PDF complet ↗</a></dd></div>
         </dl>
       </div>
     </div>
@@ -608,9 +613,12 @@ p{margin:0}
     <div class="wrap section" style="padding-bottom:0">
       <div class="kicker"><span class="mono" style="color:var(--paper);opacity:.7">Contact</span></div>
       <h2 class="h2" id="h-contact">Parlons de <span>votre prochain projet</span></h2>
-      <p class="lead">Disponible pour un entretien en présentiel ou en visioconférence, et mobile dans tout le Maroc pour rejoindre votre agence. Le portfolio complet en PDF vous est envoyé sur simple demande.</p>
-      <a class="mail-cta rv" href="mailto:yboukhdimi2003@gmail.com?subject=Votre%20portfolio%20m%27int%C3%A9resse%20%3A%29&amp;body=Bonjour%20Yassir%2C%0A%0AJ%27ai%20d%C3%A9couvert%20votre%20portfolio%20en%20ligne%20et%20votre%20travail%20m%27int%C3%A9resse.%0A%0AJe%20suis%20%5BPr%C3%A9nom%20Nom%5D%2C%20%5Bposte%5D%20chez%20%5Bagence%20/%20entreprise%5D%2C%20%C3%A0%20%5Bville%5D.%0A%0ANous%20recherchons%20%3A%20%5Bstage%20/%20CDD%20/%20CDI%20/%20mission%5D%0APoste%20ou%20projet%20concern%C3%A9%20%3A%20%5Bquelques%20mots%5D%0A%0APourriez-vous%20m%27envoyer%20votre%20portfolio%20complet%20en%20PDF%20%3F%20Seriez-vous%20disponible%20pour%20un%20premier%20%C3%A9change%20dans%20les%20prochains%20jours%20%3F%0A%0ACordialement%2C%0A%5BPr%C3%A9nom%20Nom%5D%0A%5BT%C3%A9l%C3%A9phone%5D">Demander le portfolio PDF <span aria-hidden="true">→</span></a>
-      <p class="mail-hint mono">Ouvre votre messagerie avec un e-mail prêt à compléter</p>
+      <p class="lead">Disponible pour un entretien en présentiel ou en visioconférence, et mobile dans tout le Maroc pour rejoindre votre agence. Le portfolio complet est téléchargeable en PDF, en haute définition.</p>
+      <div class="cta-row rv">
+        <a class="mail-cta" href="https://drive.google.com/file/d/1IXaNJQfsGT-6OYRjpzVmiHBmmHLGv0DJ/view?usp=sharing" target="_blank" rel="noopener">Télécharger le portfolio PDF <span aria-hidden="true">↓</span></a>
+        <a class="mail-cta ghost" href="mailto:yboukhdimi2003@gmail.com?subject=Votre%20portfolio%20m%27int%C3%A9resse%20%3A%29&amp;body=Bonjour%20Yassir%2C%0A%0AJ%27ai%20d%C3%A9couvert%20votre%20portfolio%20en%20ligne%20et%20votre%20travail%20m%27int%C3%A9resse.%0A%0AJe%20suis%20%5BPr%C3%A9nom%20Nom%5D%2C%20%5Bposte%5D%20chez%20%5Bagence%20/%20entreprise%5D%2C%20%C3%A0%20%5Bville%5D.%0A%0ANous%20recherchons%20%3A%20%5Bstage%20/%20CDD%20/%20CDI%20/%20mission%5D%0APoste%20ou%20projet%20concern%C3%A9%20%3A%20%5Bquelques%20mots%5D%0A%0ASeriez-vous%20disponible%20pour%20un%20premier%20%C3%A9change%20dans%20les%20prochains%20jours%20%3F%0A%0ACordialement%2C%0A%5BPr%C3%A9nom%20Nom%5D%0A%5BT%C3%A9l%C3%A9phone%5D">Écrire à Yassir <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="mail-hint mono">Portfolio complet, 2024–2026 · le bouton e-mail ouvre un message prêt à compléter</p>
       <dl class="contact-grid rv">
         <div><dt>E-mail</dt><dd id="c-mail">yboukhdimi2003@gmail.com</dd><button class="cbtn" type="button" data-copy="c-mail">Copier l'adresse</button></div>
         <div><dt>Téléphone · WhatsApp</dt><dd id="c-tel">+212 6 69 96 06 59</dd><button class="cbtn" type="button" data-copy="c-tel">Copier le numéro</button></div>
