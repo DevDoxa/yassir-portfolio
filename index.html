@@ -248,6 +248,10 @@ p{margin:0}
 .cbtn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 .contact p.lead{max-width:46ch;margin-top:22px;opacity:.8;font-size:1.15rem}
 @media (max-width:820px){.contact-grid{grid-template-columns:1fr}}
+.mail-cta{display:inline-flex;align-items:center;gap:14px;margin-top:28px;background:var(--paper);color:var(--ink);text-decoration:none;font-family:var(--f-display);font-weight:700;font-stretch:115%;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(.95rem,1.4vw,1.1rem);padding:16px 22px;transition:background .2s,color .2s,gap .2s}
+.mail-cta:hover{background:var(--blue);color:#fff;gap:20px}
+.mail-cta:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.mail-hint{margin-top:10px;opacity:.55}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:28px;opacity:.6}
 
 /* ---------- Visionneuse ---------- */
@@ -295,7 +299,7 @@ p{margin:0}
         <p>Étudiant architecte à l'École Nationale d'Architecture de Fès. Je conçois des bâtiments qui partent <em>du paysage, du climat et des savoir-faire locaux</em>, et je sais les mener jusqu'au détail et au chantier.</p>
         <dl class="status">
           <div><dt>Disponibilité</dt><dd><span class="dot"></span>Ouvert aux opportunités en agence</dd></div>
-          <div><dt>Basé à</dt><dd>Fès · Meknès, Maroc</dd></div>
+          <div><dt>Mobilité</dt><dd>Tout le Maroc</dd></div>
           <div><dt>Diplôme</dt><dd>Architecte, 2027</dd></div>
         </dl>
       </div>
@@ -604,7 +608,9 @@ p{margin:0}
     <div class="wrap section" style="padding-bottom:0">
       <div class="kicker"><span class="mono" style="color:var(--paper);opacity:.7">Contact</span></div>
       <h2 class="h2" id="h-contact">Parlons de <span>votre prochain projet</span></h2>
-      <p class="lead">Disponible pour un entretien, en présentiel à Fès ou Meknès ou en visioconférence. Le portfolio complet en PDF est envoyé sur demande.</p>
+      <p class="lead">Disponible pour un entretien en présentiel ou en visioconférence, et mobile dans tout le Maroc pour rejoindre votre agence. Le portfolio complet en PDF vous est envoyé sur simple demande.</p>
+      <a class="mail-cta rv" href="mailto:yboukhdimi2003@gmail.com?subject=Votre%20portfolio%20m%27int%C3%A9resse%20%3A%29&amp;body=Bonjour%20Yassir%2C%0A%0AJ%27ai%20d%C3%A9couvert%20votre%20portfolio%20en%20ligne%20et%20votre%20travail%20m%27int%C3%A9resse.%0A%0AJe%20suis%20%5BPr%C3%A9nom%20Nom%5D%2C%20%5Bposte%5D%20chez%20%5Bagence%20/%20entreprise%5D%2C%20%C3%A0%20%5Bville%5D.%0A%0ANous%20recherchons%20%3A%20%5Bstage%20/%20CDD%20/%20CDI%20/%20mission%5D%0APoste%20ou%20projet%20concern%C3%A9%20%3A%20%5Bquelques%20mots%5D%0A%0APourriez-vous%20m%27envoyer%20votre%20portfolio%20complet%20en%20PDF%20%3F%20Seriez-vous%20disponible%20pour%20un%20premier%20%C3%A9change%20dans%20les%20prochains%20jours%20%3F%0A%0ACordialement%2C%0A%5BPr%C3%A9nom%20Nom%5D%0A%5BT%C3%A9l%C3%A9phone%5D">Demander le portfolio PDF <span aria-hidden="true">→</span></a>
+      <p class="mail-hint mono">Ouvre votre messagerie avec un e-mail prêt à compléter</p>
       <dl class="contact-grid rv">
         <div><dt>E-mail</dt><dd id="c-mail">yboukhdimi2003@gmail.com</dd><button class="cbtn" type="button" data-copy="c-mail">Copier l'adresse</button></div>
         <div><dt>Téléphone · WhatsApp</dt><dd id="c-tel">+212 6 69 96 06 59</dd><button class="cbtn" type="button" data-copy="c-tel">Copier le numéro</button></div>
