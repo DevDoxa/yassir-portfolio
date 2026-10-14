@@ -6,7 +6,7 @@
 <title>Yassir Boukhdimi · Architecture</title>
 <meta name="theme-color" content="#ECEEEA">
 <meta property="og:title" content="Yassir Boukhdimi · Architecture">
-<meta property="og:description" content="Portfolio de Yassir Boukhdimi, étudiant architecte à l'ENA de Fès, à la recherche d'un stage de PFE.">
+<meta property="og:description" content="Du territoire au détail. Portfolio de Yassir Boukhdimi, étudiant en architecture à l'ENA de Fès, à la recherche d'un stage de PFE dès novembre 2026.">
 <meta property="og:image" content="https://devdoxa.github.io/yassir-portfolio/img/ifrane-hero.webp">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141B18'/%3E%3Cpath d='M8 7h4l4 8 4-8h4l-6 11v7h-4v-7z' fill='%23ECEEEA'/%3E%3C/svg%3E">
@@ -64,45 +64,96 @@ p{margin:0}
 .nav a[data-ax].on::before{background:var(--blue);border-color:var(--blue);color:#fff}
 .nav a[data-ax]:hover::before{border-color:var(--blue);color:var(--blue)}
 .nav a[data-ax].on:hover::before{color:#fff}
-.nav .cta{color:var(--sheet);background:var(--ink);padding:8px 12px;border:0}
-.nav .cta:hover{background:var(--blue);color:#fff}
-.nav .cta.on{color:var(--sheet);border-color:transparent}
-@media (max-width:980px){.nav a[data-ax]{font-size:0;gap:0}.nav a[data-ax]::before{font-size:.7rem}}
-@media (max-width:620px){.nav a:not(.cta){display:none}}
+.nav{margin-left:auto}
+.bar .cta{color:var(--sheet);background:var(--ink);padding:8px 12px;border:0;text-decoration:none;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.bar .cta:hover{background:var(--blue);color:#fff}
+.bar .cta.on{color:var(--sheet);border-color:transparent}
+@media (max-width:980px) and (min-width:621px){.nav a[data-ax]{font-size:0;gap:0}.nav a[data-ax]::before{font-size:.7rem}}
+@media (max-width:620px){
+  .bar .wrap{flex-wrap:wrap;row-gap:0}
+  .nav{order:3;width:100%;overflow-x:auto;gap:16px;padding-bottom:10px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .nav::-webkit-scrollbar{display:none}
+  .bar .wrap::after{content:"›";position:absolute;right:10px;bottom:12px;width:22px;height:22px;display:grid;place-items:center;font-family:var(--f-display);font-size:1rem;color:var(--blue);background:var(--paper);border:1px solid var(--line);border-radius:50%;pointer-events:none;transition:opacity .3s}
+  .bar.end .wrap::after{opacity:0}
+  .nav a[data-ax]{font-size:.66rem;gap:6px;white-space:nowrap;flex:none}
+  .bar .wrap{position:relative}
+  .brand{font-size:.78rem;padding-block:14px}
+  .bar .cta{position:absolute;right:16px;top:9px;padding:7px 10px;font-size:.66rem}
+}
 
-/* ---------- Hero ---------- */
-.hero{padding-block:clamp(20px,3vw,40px) 0}
-.hero-fig{margin:0;max-width:1756px}
-.hero-fig img{width:100%;height:auto;aspect-ratio:1756/1004;max-height:58vh;object-fit:cover;object-position:50% 62%;background:var(--img-bg);animation:settle 1.8s cubic-bezier(.2,.7,.1,1) both}
+/* ---------- Hero : image et candidature visibles ensemble ---------- */
+.hero{padding-block:clamp(20px,3vw,36px) 0;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(24px,3.5vw,56px);align-items:center}
+.hero-fig{margin:0;min-width:0}
+.hero-fig img{width:100%;height:auto;aspect-ratio:1756/1004;object-fit:cover;background:var(--img-bg);animation:settle 1.6s cubic-bezier(.2,.7,.1,1) both}
 @keyframes settle{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:none}}
 .hero-fig figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:10px;color:var(--mute);border-bottom:1px solid var(--line)}
 .hero-fig figcaption a{color:var(--blue);text-decoration:none}
-.hero-fig figcaption a:hover{text-decoration:underline}
-.hero-body{margin-top:clamp(28px,4vw,52px)}
-.eyebrow{color:var(--blue);margin-bottom:10px}
-.name{font-family:var(--f-display);font-weight:300;font-stretch:100%;text-transform:none;letter-spacing:-.025em;line-height:1;font-size:clamp(2.4rem,6vw,5.2rem);animation:rise 1s .3s cubic-bezier(.2,.7,.1,1) both}
-@keyframes rise{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
-.coords{font-family:var(--f-mono);font-size:.72rem;color:var(--mute);line-height:1.7;letter-spacing:.05em;display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
-.coords span{white-space:nowrap}
-.coords b{color:var(--blue);font-weight:500}
-.lede{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);margin-top:clamp(22px,3vw,36px);align-items:start}
-.lede > p{font-size:clamp(1.15rem,1.7vw,1.45rem);line-height:1.42;max-width:34ch}
-.lede > p em{color:var(--blue);font-style:italic}
-.status{display:grid;grid-template-columns:1fr 1fr;margin:0;border-top:1px solid var(--ink)}
-.status div{padding:12px 0;border-bottom:1px solid var(--line);min-width:0}
+.hero-body{min-width:0;padding-bottom:10px}
+.tagline{font-family:var(--f-text);font-style:italic;font-size:clamp(1.3rem,2vw,1.7rem);color:var(--blue);margin-bottom:6px}
+.name{font-family:var(--f-display);font-weight:300;font-stretch:100%;text-transform:none;letter-spacing:-.025em;line-height:1;font-size:clamp(2.2rem,3.9vw,3.5rem)}
+.who{margin-top:10px;color:var(--mute);font-size:1.02rem;max-width:36ch}
+.status{display:grid;grid-template-columns:1fr 1fr;margin:20px 0 0;border-top:1px solid var(--ink)}
+.status div{padding:10px 0;border-bottom:1px solid var(--line);min-width:0}
 .status .main,.status .main-sub{grid-column:1/-1}
-.status div:nth-child(3){padding-left:18px;border-left:1px solid var(--line)}
-.status dt{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:3px}
-.status dd{margin:0;font-size:1.02rem}
+.status div:nth-child(3),.status div:nth-child(5){padding-left:18px;border-left:1px solid var(--line)}
+.status dt{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:2px}
+.status dd{margin:0;font-size:1rem}
 .status .main dd{font-family:var(--f-display);font-weight:600;font-size:clamp(1.15rem,1.6vw,1.35rem);letter-spacing:-.01em}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blue);margin-right:10px;box-shadow:0 0 0 4px var(--blue-soft);vertical-align:3px;animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 7px transparent}}
-.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);text-decoration:none;font-family:var(--f-mono);font-size:.76rem;letter-spacing:.07em;text-transform:uppercase;padding:13px 18px;transition:background .2s,color .2s,gap .2s}
-.btn:hover{background:var(--blue);color:#fff;gap:16px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blue);margin-right:10px;box-shadow:0 0 0 4px var(--blue-soft);vertical-align:3px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);text-decoration:none;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;padding:12px 16px;transition:background .2s,color .2s}
+.btn:hover{background:var(--blue);color:#fff}
 .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
-@media (max-width:760px){.lede{grid-template-columns:1fr}}
+.hero-links{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:14px}
+.hero-links a{color:var(--blue);text-decoration:none;border-bottom:1px solid transparent}
+.hero-links a:hover{border-color:var(--blue)}
+.coords{font-family:var(--f-mono);font-size:.68rem;color:var(--mute);letter-spacing:.05em;display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:18px;padding-top:12px;border-top:1px solid var(--line)}
+.coords b{color:var(--blue);font-weight:500}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+@media (max-width:620px){
+  .hero{gap:14px;padding-top:12px}
+  .hero-fig img{aspect-ratio:16/8.5;object-position:50% 62%}
+  .hero-fig figcaption{display:none}
+  .hero-body{display:flex;flex-direction:column}
+  .tagline{order:1;font-size:1.15rem;margin-bottom:2px}
+  .name{order:2;font-size:2.2rem}
+  .who{order:3;margin-top:6px;font-size:.95rem}
+  .hero-cta{order:4;margin-top:14px}
+  .hero-cta .btn{padding:11px 13px;font-size:.68rem}
+  .status{order:5;margin-top:16px}
+  .hero-links{order:6}
+  .coords{order:7}
+}
+
+/* ---------- Décisions, chaîne de démonstration, contribution ---------- */
+.geste{font-family:var(--f-text);font-style:italic;font-size:clamp(1.15rem,1.6vw,1.35rem);color:var(--blue);margin-bottom:12px}
+.decisions{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.decisions li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:baseline;padding-top:10px;border-top:1px solid var(--line)}
+.decisions b{font-family:var(--f-mono);font-weight:500;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);white-space:nowrap}
+.demo{border-top:1px solid var(--line);padding:clamp(16px,2.5vw,28px)}
+.demo h4{font-family:var(--f-mono);font-weight:500;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 14px}
+.demo ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);counter-reset:d}
+.demo li{min-width:0;display:flex;flex-direction:column;gap:10px}
+.demo button{all:unset;cursor:zoom-in;display:block;background:#fff;border:1px solid var(--line)}
+.demo button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.demo button{position:relative}
+.demo button::after{content:"";position:absolute;right:8px;bottom:8px;width:26px;height:26px;background:var(--ink) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.8'><path d='M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7'/></svg>") center/14px no-repeat;opacity:.82;transition:opacity .2s,background-color .2s}
+.demo button:hover::after{opacity:1;background-color:var(--blue)}
+.demo img{width:100%;aspect-ratio:4/3;object-fit:contain;padding:6px;display:block}
+.demo img.ph{object-fit:cover;padding:0}
+.demo .k{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.demo p{font-size:.95rem;line-height:1.4}
+@media (max-width:860px){.demo ol{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.demo ol{grid-template-columns:1fr}}
+.contrib{margin-top:20px;border:1px solid var(--blue);display:grid;grid-template-columns:1fr 1fr}
+.contrib div{padding:10px 14px;min-width:0;border-bottom:1px solid var(--line)}
+.contrib div:nth-child(odd){border-right:1px solid var(--line)}
+.contrib div:nth-last-child(-n+2){border-bottom:0}
+.contrib dt{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:3px}
+.contrib dd{margin:0;font-size:.95rem;line-height:1.35}
+.contrib-note{margin-top:8px;font-size:.88rem;color:var(--mute)}
+@media (max-width:520px){.contrib{grid-template-columns:1fr}.contrib div:nth-child(odd){border-right:0}.contrib div:nth-last-child(2){border-bottom:1px solid var(--line)}}
 
 /* ---------- Séparateurs : axes de trame ---------- */
 .axdiv{display:flex;align-items:center;gap:14px;padding-block:clamp(36px,6vw,70px)}
@@ -128,14 +179,12 @@ p{margin:0}
 @supports (animation-timeline: view()){
   .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 5% entry 75%}
   @keyframes rv{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
-  .view{animation:open linear both;animation-timeline:view();animation-range:entry 0% entry 65%}
   @keyframes open{from{clip-path:inset(10% 6% 10% 6%)}to{clip-path:inset(0 0 0 0)}}
   .view img:not(.drawing){animation:drift linear both;animation-timeline:view();animation-range:cover}
   @keyframes drift{from{transform:scale(1.12) translateY(-3%)}to{transform:scale(1.04) translateY(3%)}}
   .axdiv::before{transform-origin:right;animation:axin linear both;animation-timeline:view();animation-range:entry 10% cover 40%}
   .axdiv::after{transform-origin:left;animation:axin linear both;animation-timeline:view();animation-range:entry 10% cover 40%}
   @keyframes axin{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-  .carnet button{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
 }
 
 /* ---------- Argumentaire ---------- */
@@ -375,8 +424,8 @@ p{margin:0}
       <a href="#profil" data-ax="D">Profil</a>
       <a href="#parcours" data-ax="E">Parcours</a>
       <a href="#carnet" data-ax="F">Carnet</a>
-      <a class="cta" href="#contact">Contact</a>
     </nav>
+    <a class="cta" href="#contact">Contact</a>
   </div>
 </header>
 
@@ -384,28 +433,26 @@ p{margin:0}
   <!-- HERO -->
   <section class="hero wrap" aria-labelledby="hname">
     <figure class="hero-fig">
-      <img src="img/ifrane-hero.webp" width="1756" height="1004" fetchpriority="high" alt="Rendu de l'aéroport d'Ifrane : une toiture blanche ondulée portée par des structures en acier Corten, au pied du Moyen Atlas, sous un ciel d'orage.">
-      <figcaption class="mono"><span>Aéroport d'Ifrane, Moyen Atlas · Semestre 10, juin 2026</span><a href="#p-ifrane">Voir le projet ↓</a></figcaption>
+      <img src="img/ifrane-hero.webp" width="1756" height="1004" fetchpriority="high" alt="Rendu de l'aéroport d'Ifrane : une toiture blanche ondulée portée par des structures en acier Corten, au pied du Moyen Atlas.">
+      <figcaption class="mono"><span>Aéroport d'Ifrane · semestre 10, 2026</span><a href="#p-ifrane">Voir le projet ↓</a></figcaption>
     </figure>
     <div class="hero-body">
-      <p class="eyebrow mono">Architecture · Projets choisis 2024–2026</p>
+      <p class="tagline">Du territoire au détail.</p>
       <h1 class="name" id="hname">Yassir Boukhdimi</h1>
-      <p class="coords"><span>ENA Fès · promotion 2027</span><span><b>34°02′N 5°00′W</b></span><span>Arabe · Français · Anglais</span></p>
-      <div class="lede">
-        <p>Étudiant architecte à l'École Nationale d'Architecture de Fès. Je conçois des bâtiments qui partent <em>du paysage, du climat et des savoir-faire locaux</em>, et je les mène jusqu'aux pièces techniques.</p>
-        <div class="lede-side">
-          <dl class="status">
-            <div class="main"><dt>Recherche</dt><dd><span class="dot"></span>Stage de PFE rémunéré</dd></div>
-            <div><dt>Début</dt><dd>Novembre 2026</dd></div>
-            <div><dt>Diplôme</dt><dd>Architecte, 2027</dd></div>
-            <div class="main-sub"><dt>Basé à</dt><dd>Meknès · mobile dans tout le Maroc</dd></div>
-          </dl>
-          <div class="hero-cta">
-            <a class="btn" href="#projets">Voir les projets <span aria-hidden="true">↓</span></a>
-            <a class="btn ghost" href="https://drive.google.com/file/d/1IXaNJQfsGT-6OYRjpzVmiHBmmHLGv0DJ/view?usp=sharing" target="_blank" rel="noopener">Portfolio PDF <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
+      <p class="who">Étudiant en sixième année à l'École Nationale d'Architecture de Fès</p>
+      <dl class="status">
+        <div class="main"><dt>Recherche</dt><dd><span class="dot"></span>Stage de PFE rémunéré</dd></div>
+        <div><dt>Début</dt><dd>Novembre 2026</dd></div>
+        <div><dt>Durée</dt><dd>À convenir, jusqu'à l'été 2027</dd></div>
+        <div><dt>Basé à</dt><dd>Meknès, mobile dans tout le Maroc</dd></div>
+        <div><dt>Diplôme</dt><dd>Architecte, prévu en 2027</dd></div>
+      </dl>
+      <div class="hero-cta">
+        <a class="btn" href="#projets">Voir les projets <span aria-hidden="true">↓</span></a>
+        <a class="btn ghost" href="yassir-boukhdimi-portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF · 17 Mo <span aria-hidden="true">↗</span></a>
       </div>
+      <p class="hero-links mono"><a href="#p-ifrane">Projet académique · Ifrane →</a><a href="#p-azlaf">Projet en agence · Azlaf →</a></p>
+      <p class="coords"><span>ENA Fès · promotion 2027</span><span><b>34°02′N 5°00′W</b></span><span>Arabe · Français · Anglais</span></p>
     </div>
   </section>
 
@@ -415,18 +462,18 @@ p{margin:0}
       <div class="pitch-intro rv">
         <div class="kicker"><span class="mono">Pour les agences</span></div>
         <h2 class="h2" id="h-atouts">Ce que j'apporte à votre équipe</h2>
-        <p>Six années de formation, cinq stages et quatre dossiers de consultation traités en agence : je conçois, je produis les pièces graphiques et je connais le fonctionnement d'un marché public.</p>
+        <p>En sixième année d'architecture, avec cinq stages et quatre dossiers de consultation traités en agence : je conçois, je produis les pièces graphiques et je connais le fonctionnement d'un marché public.</p>
       </div>
-      <ol class="proofs rv">
+      <ol class="proofs">
         <li><span class="n">1:20</span><div><h3>Je change d'échelle sans perdre le fil</h3><p>Du plan de masse d'un aéroport international jusqu'au comptoir d'accueil dessiné au 1:20, avec la même logique de projet.</p></div></li>
         <li><span class="n">4</span><div><h3>Consultations publiques traitées en agence</h3><p>En agence, d'abord chez Frouga Design puis au sein de Kouchtir Architectures, je participe à la conception de dossiers de consultation : je propose les premières idées, je les reprends avec l'architecte, puis je produis plans, coupes, façades et rendus. Beni Ensar, Berkine, Figuig et Azlaf, cette dernière remportée par Kouchtir Architectures.</p></div></li>
         <li><span class="n">5</span><div><h3>Stages en agence, chantier et administration</h3><p>Deux chantiers à Meknès pour observer, deux agences à Guercif pour produire, et l'Agence Urbaine de Meknès. J'y ai appris à traiter un dossier de consultation et à utiliser les plateformes de marchés publics.</p></div></li>
-        <li><span class="n">BIM</span><div><h3>Archicad au quotidien, Revit pour le BIM</h3><p>Archicad pour modéliser et détailler, Revit et Navisworks sur des projets tous corps d'état, V-Ray et Enscape pour le rendu, la suite Adobe pour la mise en page.</p></div></li>
+        <li><span class="n">BIM</span><div><h3>Archicad au quotidien, Revit sur les projets TCE</h3><p>Archicad pour modéliser en BIM et détailler, Revit et Navisworks sur des projets tous corps d'état, V-Ray et Enscape pour le rendu, la suite Adobe pour la mise en page.</p></div></li>
         <li><span class="n">✎</span><div><h3>Je dessine à la main</h3><p>Aquarelle, pastel, croquis de structure : le dessin me sert à chercher vite et à expliquer clairement, en atelier comme face à un client.</p></div></li>
       </ol>
     </div>
 
-    <div class="scales rv" aria-label="Exemples de production à différentes échelles">
+    <div class="scales" aria-label="Exemples de production à différentes échelles">
       <figure><img src="img/ifrane-masterplan.webp" width="1500" height="847" loading="lazy" alt="Plan de masse de l'aéroport d'Ifrane"><figcaption><span class="sc">Territoire</span><span class="sd">Plan de masse, piste et accès de l'aéroport d'Ifrane</span></figcaption></figure>
       <figure><img src="img/cmc-plan.webp" width="1400" height="764" loading="lazy" alt="Plan d'ensemble de la Cité des Métiers et des Compétences"><figcaption><span class="sc">Quartier</span><span class="sd">Plan d'ensemble de la Cité des Métiers, Timdiqine</span></figcaption></figure>
       <figure><img src="img/cmc-section.webp" width="1400" height="438" loading="lazy" alt="Coupe d'un bâtiment de la Cité des Métiers"><figcaption><span class="sc">Bâtiment</span><span class="sd">Coupe sur un pavillon de formation, toitures à 30–50°</span></figcaption></figure>
@@ -439,14 +486,14 @@ p{margin:0}
     <div class="kicker"><span class="mono">Projets choisis · 2024–2026</span></div>
     <h2 class="h2" id="h-projets">Six projets</h2>
     <p class="carnet-note" style="margin-top:14px">Quatre projets académiques individuels et deux consultations publiques traitées en agence.</p>
-    <nav class="cote rv" aria-label="Accès direct aux planches"><a href="#p-ifrane"><b>01 · Ifrane</b><span>Aéroport</span></a><a href="#p-cmc"><b>02 · Timdiqine</b><span>Cité des Métiers</span></a><a href="#p-chaouen"><b>03 · Chefchaouen</b><span>Éco-village</span></a><a href="#p-bmce"><b>04 · Intérieur</b><span>Bank of Africa</span></a><a href="#p-figuig"><b>05 · Figuig</b><span>Consultation</span></a><a href="#p-azlaf"><b>06 · Azlaf</b><span>Remportée</span></a></nav>
-    <ul class="pgrid rv">
+    <nav class="cote" aria-label="Accès direct aux planches"><a href="#p-ifrane"><b>01 · Ifrane</b><span>Aéroport</span></a><a href="#p-azlaf"><b>02 · Azlaf</b><span>Remportée</span></a><a href="#p-chaouen"><b>03 · Chefchaouen</b><span>Éco-village</span></a><a href="#p-cmc"><b>04 · Timdiqine</b><span>Cité des Métiers</span></a><a href="#p-bmce"><b>05 · Intérieur</b><span>Bank of Africa</span></a><a href="#p-figuig"><b>06 · Figuig</b><span>Consultation</span></a></nav>
+    <ul class="pgrid">
       <li><a href="#p-ifrane"><span class="pimg"><img src="img/ifrane-aerial.webp" width="1600" height="914" loading="lazy" alt=""></span><span class="pcap"><span class="mono pn">01</span><span class="pt">La porte blanche du Moyen Atlas</span><span class="mono pm">Aéroport · Ifrane · 2026</span></span></a></li>
-      <li><a href="#p-cmc"><span class="pimg"><img src="img/cmc-aerial.webp" width="1536" height="882" loading="lazy" alt=""></span><span class="pcap"><span class="mono pn">02</span><span class="pt">Cité des Métiers et des Compétences</span><span class="mono pm">Équipement · Ifrane · 2026</span></span></a></li>
+      <li><a href="#p-azlaf"><span class="pimg"><img src="img/azlaf-access.webp" width="1800" height="1012" loading="lazy" alt=""></span><span class="pcap"><span class="mono pn">02</span><span class="pt">Centre pour personnes à besoins spécifiques</span><span class="mono pm">Consultation remportée · Azlaf · 2025</span></span></a></li>
       <li><a href="#p-chaouen"><span class="pimg"><img src="img/chaouen-plaza.webp" width="1500" height="675" loading="lazy" alt=""></span><span class="pcap"><span class="mono pn">03</span><span class="pt">Éco-village de tourisme participatif</span><span class="mono pm">Habitat · Chefchaouen · 2024</span></span></a></li>
-      <li><a href="#p-bmce"><span class="pimg"><img src="img/bmce-lobby.webp" width="1600" height="913" loading="lazy" alt=""></span><span class="pcap"><span class="mono pn">04</span><span class="pt">Agence Bank of Africa</span><span class="mono pm">Intérieur · Exercice · 2026</span></span></a></li>
-      <li><a href="#p-figuig"><span class="pimg"><img src="img/figuig-facade.webp" width="1600" height="914" loading="lazy" alt=""></span><span class="pcap"><span class="mono pn">05</span><span class="pt">Centre d'accueil de Figuig</span><span class="mono pm">Consultation · Figuig · 2024</span></span></a></li>
-      <li><a href="#p-azlaf"><span class="pimg"><img src="img/azlaf-access.webp" width="1800" height="1012" loading="lazy" alt=""></span><span class="pcap"><span class="mono pn">06</span><span class="pt">Centre pour personnes à besoins spécifiques</span><span class="mono pm">Consultation remportée · Azlaf · 2025</span></span></a></li>
+      <li><a href="#p-cmc"><span class="pimg"><img src="img/cmc-aerial.webp" width="1536" height="882" loading="lazy" alt=""></span><span class="pcap"><span class="mono pn">04</span><span class="pt">Cité des Métiers et des Compétences</span><span class="mono pm">Équipement · Ifrane · 2026</span></span></a></li>
+      <li><a href="#p-bmce"><span class="pimg"><img src="img/bmce-lobby.webp" width="1600" height="913" loading="lazy" alt=""></span><span class="pcap"><span class="mono pn">05</span><span class="pt">Agence Bank of Africa</span><span class="mono pm">Intérieur · Exercice · 2026</span></span></a></li>
+      <li><a href="#p-figuig"><span class="pimg"><img src="img/figuig-facade.webp" width="1600" height="914" loading="lazy" alt=""></span><span class="pcap"><span class="mono pn">06</span><span class="pt">Centre d'accueil de Figuig</span><span class="mono pm">Consultation · Figuig · 2024</span></span></a></li>
     </ul>
   </section>
 
@@ -456,28 +503,25 @@ p{margin:0}
       <header class="ph rv">
         <div><p class="no">Planche 01 / 06 · Projet académique, semestre 10</p><h3 id="t1">La porte blanche du Moyen Atlas</h3><p class="sub">Aéroport international d'Ifrane</p></div>
         <div class="tabs" role="group" aria-label="Vues du projet">
-          <button type="button" aria-pressed="true" data-src="img/ifrane-hero.webp" data-alt="Rendu extérieur de l'aéroport d'Ifrane">Rendu</button>
+          <button type="button" aria-pressed="true" data-src="img/ifrane-garden.webp" data-alt="Jardin intérieur sous la verrière du terminal">Intérieur</button>
           <button type="button" aria-pressed="false" data-src="img/ifrane-aerial.webp" data-alt="Vue aérienne du terminal et des pistes">Aérien</button>
           <button type="button" aria-pressed="false" data-src="img/ifrane-masterplan.webp" data-draw data-alt="Plan de masse">Plan de masse</button>
           <button type="button" aria-pressed="false" data-src="img/ifrane-plan.webp" data-draw data-alt="Plan du rez-de-chaussée">Plan RDC</button>
+          <button type="button" aria-pressed="false" data-src="img/ifrane-flux.webp" data-draw data-alt="Étude des circulations sur deux niveaux">Flux</button>
           <button type="button" aria-pressed="false" data-src="img/ifrane-elevation.webp" data-draw data-alt="Élévation dans le paysage de cèdres">Élévation</button>
         </div>
       </header>
-      <figure class="view"><img src="img/ifrane-hero.webp" width="1756" height="1004" loading="lazy" alt="Rendu extérieur de l'aéroport d'Ifrane"><span class="zoom">Agrandir</span></figure>
+      <figure class="view"><img src="img/ifrane-garden.webp" width="1600" height="913" loading="lazy" alt="Jardin intérieur sous la verrière du terminal"><span class="zoom">Agrandir</span></figure>
       <div class="pbody">
-        <div class="ptext rv">
-          <p>Ifrane n'a pas d'entrée à la hauteur de son paysage. Le projet fait de l'aéroport cette entrée : le voyageur découvre la neige, la forêt de cèdres et la montagne dès la descente d'avion. Le terminal reste compact et lisible, la piste est étendue aux exigences d'un aéroport international de moyenne capacité, et les réserves naturelles voisines sont préservées.</p>
-          <p>Chaque élément du site d'Ifrane devient un principe de conception, traduit en structure et en matière.</p>
-          <details class="more"><summary>Les idées clés du projet</summary>
-          <ul class="moves">
-            <li><b>Neige</b><span>Une toiture topographique blanche en GRC, ondulée comme les lignes du Moyen Atlas.</span></li>
-            <li><b>Cèdre</b><span>Des poteaux en acier Corten qui se ramifient comme les branches du cèdre de l'Atlas.</span></li>
-            <li><b>Forêt</b><span>Des jardins intérieurs sous verrière : une architecture biophilique au cœur du terminal.</span></li>
-            <li><b>Climat</b><span>Orientation, lumière naturelle, ventilation passive et centrale solaire sur le site.</span></li>
+        <div class="ptext">
+          <p class="geste">Transformer un paysage en structure.</p>
+          <p>L'aéroport est pensé comme une porte d'entrée sur le Moyen Atlas : le voyageur découvre la neige, la forêt de cèdres et la montagne dès la descente d'avion. Le terminal reste compact et lisible, la piste est étendue aux exigences d'un aéroport international de moyenne capacité, et le plan de masse cherche à préserver les réserves naturelles voisines.</p>
+          <ul class="decisions">
+            <li><b>Décision 1</b><span>Des poteaux en acier Corten qui se ramifient comme le cèdre de l'Atlas, sous une toiture blanche ondulée comme les crêtes enneigées.</span></li>
+            <li><b>Décision 2</b><span>Deux niveaux qui séparent les flux publics, nationaux, internationaux, de transit et du personnel.</span></li>
           </ul>
-          </details>
         </div>
-        <dl class="cartouche rv">
+        <dl class="cartouche">
           <div><dt>Lieu</dt><dd>Ifrane, Moyen Atlas</dd></div>
           <div><dt>Date</dt><dd>Semestre 10 · juin 2026</dd></div>
           <div><dt>Programme</dt><dd>Terminal national et international, VIP, fret</dd></div>
@@ -487,57 +531,77 @@ p{margin:0}
           <div class="wide"><dt>Outils</dt><dd class="tools"><span>Rhino</span><span>Archicad</span><span>Lumion</span><span>Photoshop</span><span>Illustrator</span></dd></div>
         </dl>
       </div>
+      <div class="demo">
+        <h4>Du site au détail</h4>
+        <ol>
+          <li><button type="button"><img src="img/ifrane-masterplan.webp" width="1500" height="847" loading="lazy" alt="Plan de masse de l'aéroport d'Ifrane"></button><span class="k">01 · Contrainte</span><p>Un aéroport international sur un site naturel, à 1 665 m d'altitude et sous la neige l'hiver.</p></li>
+          <li><button type="button"><img src="img/ifrane-cedar.webp" width="655" height="332" loading="lazy" alt="Diagramme : du cèdre de l'Atlas à la structure en branches"></button><span class="k">02 · Parti</span><p>Neige, cèdre et forêt deviennent trois principes : toiture topographique, structure ramifiée, jardins intérieurs.</p></li>
+          <li><button type="button"><img src="img/ifrane-flux-rdc.webp" width="1029" height="795" loading="lazy" alt="Circulations du rez-de-chaussée par type de passager"></button><span class="k">03 · Fonctionnement</span><p>Au rez-de-chaussée, chaque type de passager suit son propre parcours, de l'arrivée aux portes d'embarquement.</p></li>
+          <li><button type="button"><img src="img/ifrane-exploded.webp" width="893" height="1004" loading="lazy" alt="Axonométrie éclatée de la toiture et des matériaux"></button><span class="k">04 · Développement</span><p>L'enveloppe décomposée matériau par matériau : toitures en GRC et en Corten, métal perforé, poteaux acier.</p></li>
+        </ol>
+      </div>
       <div class="strip">
-        <button type="button"><figure style="margin:0"><img src="img/ifrane-garden.webp" width="1600" height="913" loading="lazy" alt="Jardin intérieur sous la verrière du terminal"><figcaption>Jardin intérieur</figcaption></figure></button>
         <button type="button"><figure style="margin:0"><img src="img/ifrane-hall.webp" width="755" height="469" loading="lazy" alt="Hall des bagages baigné de lumière"><figcaption>Hall arrivées</figcaption></figure></button>
         <button type="button"><figure style="margin:0"><img src="img/ifrane-forest.webp" width="755" height="469" loading="lazy" alt="Espace thématique forêt dans le terminal"><figcaption>Espace forêt</figcaption></figure></button>
         <button type="button"><figure style="margin:0"><img src="img/ifrane-concourse.webp" width="752" height="467" loading="lazy" alt="Galerie d'embarquement vitrée"><figcaption>Embarquement</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/ifrane-cedar.webp" width="655" height="332" loading="lazy" alt="Diagramme : du cèdre de l'Atlas à la structure en branches"><figcaption>Du cèdre à la structure</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/ifrane-exploded.webp" width="893" height="1004" loading="lazy" alt="Axonométrie éclatée de la toiture et des matériaux" style="background:#fff"><figcaption>Éclaté matériaux</figcaption></figure></button>
         <button type="button"><figure style="margin:0"><img src="img/ifrane-atrium.webp" width="752" height="467" loading="lazy" alt="Atrium planté du terminal"><figcaption>Atrium</figcaption></figure></button>
       </div>
     </article>
 
-    <!-- 02 CMC -->
-    <article class="planche" id="p-cmc" aria-labelledby="t2">
+    <!-- 02 AZLAF -->
+    <article class="planche" id="p-azlaf" aria-labelledby="t6">
       <header class="ph rv">
-        <div><p class="no">Planche 02 / 06 · Équipement de formation</p><h3 id="t2">Cité des Métiers et des Compétences</h3><p class="sub">Quartier Timdiqine, Ifrane</p></div>
+        <div><p class="no">Planche 02 / 06 · Consultation remportée en agence</p><h3 id="t6">Centre pour personnes à besoins spécifiques</h3><p class="sub">Surélévation et aménagement · Azlaf, province de Driouch</p></div>
         <div class="tabs" role="group" aria-label="Vues du projet">
-          <button type="button" aria-pressed="true" data-src="img/cmc-aerial.webp" data-alt="Vue aérienne de la Cité des Métiers">Rendu</button>
-          <button type="button" aria-pressed="false" data-src="img/cmc-plan.webp" data-draw data-alt="Plan d'ensemble">Plan</button>
-          <button type="button" aria-pressed="false" data-src="img/cmc-section.webp" data-draw data-alt="Coupe">Coupe</button>
-          <button type="button" aria-pressed="false" data-src="img/cmc-exploded.webp" data-draw data-alt="Axonométrie éclatée">Éclaté</button>
+          <button type="button" aria-pressed="true" data-src="img/azlaf-access.webp" data-alt="Entrée du centre, parcours accessible en fauteuil">Rendu</button>
+          <button type="button" aria-pressed="false" data-src="img/azlaf-existing.webp" data-alt="Le bâtiment existant de plain-pied, avant intervention">Existant</button>
+          <button type="button" aria-pressed="false" data-src="img/azlaf-plan-rdc.webp" data-draw data-alt="Plan du rez-de-chaussée">Plan RDC</button>
+          <button type="button" aria-pressed="false" data-src="img/azlaf-plan-etage.webp" data-draw data-alt="Plan de l'étage créé">Plan étage</button>
+          <button type="button" aria-pressed="false" data-src="img/azlaf-facade.webp" data-draw data-alt="Façade principale">Façade</button>
+          <button type="button" aria-pressed="false" data-src="img/azlaf-coupe.webp" data-draw data-alt="Coupe">Coupe</button>
         </div>
       </header>
-      <figure class="view"><img src="img/cmc-aerial.webp" width="1536" height="882" loading="lazy" alt="Vue aérienne de la Cité des Métiers"><span class="zoom">Agrandir</span></figure>
+      <figure class="view"><img src="img/azlaf-access.webp" width="1800" height="1012" loading="lazy" alt="Entrée du centre, parcours accessible en fauteuil"><span class="zoom">Agrandir</span></figure>
       <div class="pbody">
-        <div class="ptext rv">
-          <p>Le projet s'inscrit dans un plan urbain pour le quartier Timdiqine : meilleures connexions routières, accès hiérarchisés, valorisation du Souk El Had, pôle de sports de neige et grand parc urbain. La Cité des Métiers en est la pièce centrale, avec cinq filières utiles à l'économie de la région.</p>
-          <p>Les pavillons reprennent la palette de couleurs et de matériaux d'Ifrane, pour qu'un équipement contemporain reste chez lui dans cette ville de montagne.</p>
-          <details class="more"><summary>Les idées clés du projet</summary>
-          <ul class="moves">
-            <li><b>Filières</b><span>Agriculture, tourisme, artisanat, santé et sport, avec internat, médiathèque et amphithéâtre.</span></li>
-            <li><b>Neige</b><span>Toitures pentues de 30° à 50° pour évacuer la neige et éviter surcharges et infiltrations.</span></li>
-            <li><b>Lumière</b><span>Verre et métal là où les ateliers et salles demandent beaucoup de jour.</span></li>
-            <li><b>Orientation</b><span>Une signalétique claire et hiérarchisée pour se repérer sans hésiter.</span></li>
+        <div class="ptext">
+          <p class="geste">Composer avec l'existant, l'accessibilité et le budget.</p>
+          <p>Un centre de plain-pied à agrandir d'un étage et à réaménager pour mieux accueillir les personnes à besoins spécifiques. Pour tenir le budget, l'architecte a demandé une écriture sobre, sans ornement.</p>
+          <ul class="decisions">
+            <li><b>Décision 1</b><span>Surélever le bâtiment existant d'un étage plutôt que de le reconstruire.</span></li>
+            <li><b>Décision 2</b><span>Des aires de rotation pour fauteuil roulant (Ø 1,50 m) dessinées dans chaque pièce, aux deux niveaux. Le dossier retient des menuiseries en bois, fer et aluminium.</span></li>
           </ul>
-          </details>
+          <dl class="contrib">
+            <div><dt>Agence</dt><dd>Kouchtir Architectures</dd></div>
+            <div><dt>Résultat</dt><dd>Consultation remportée par l'agence</dd></div>
+            <div><dt>Ma contribution</dt><dd>Propositions de conception, reprises et corrigées avec l'architecte</dd></div>
+            <div><dt>Pièces réalisées</dt><dd>Plans, coupes, façades et rendus</dd></div>
+          </dl>
+          <p class="contrib-note">Le dossier de l'agence comprend aussi l'état des lieux, le phasage des études et l'estimation.</p>
         </div>
-        <dl class="cartouche rv">
-          <div><dt>Lieu</dt><dd>Timdiqine, Ifrane</dd></div>
-          <div><dt>Date</dt><dd>Semestre 9 · janvier 2026</dd></div>
-          <div><dt>Programme</dt><dd>Centre de formation et internat</dd></div>
-          <div><dt>Cadre</dt><dd>Projet académique</dd></div>
-          <div class="wide"><dt>Coordonnées</dt><dd class="north"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="none" stroke="currentColor" stroke-width="1"/><path d="M13 3 L17 19 L13 15 L9 19 Z" fill="currentColor"/></svg>33°32′N 5°06′W</dd></div>
-          <div class="wide"><dt>Travail</dt><dd>Individuel, avec le suivi des enseignants de l'atelier</dd></div>
-          <div class="wide"><dt>Outils</dt><dd class="tools"><span>Archicad</span><span>SketchUp</span><span>V-Ray</span><span>Photoshop</span><span>Illustrator</span></dd></div>
+        <dl class="cartouche">
+          <div><dt>Lieu</dt><dd>Azlaf, province de Driouch</dd></div>
+          <div><dt>Date</dt><dd>Août 2025</dd></div>
+          <div><dt>Programme</dt><dd>Centre d'accueil et d'accompagnement</dd></div>
+          <div><dt>Cadre</dt><dd>Consultation publique, remportée</dd></div>
+          <div class="wide"><dt>Intervention</dt><dd>Surélévation d'un étage et réaménagement</dd></div>
+          
         </dl>
       </div>
+      <div class="demo">
+        <h4>Pièces du dossier</h4>
+        <ol>
+          <li><button type="button"><img class="ph" src="img/azlaf-existing.webp" width="1280" height="576" loading="lazy" alt="Le bâtiment existant de plain-pied"></button><span class="k">Existant</span><p>Un bâtiment de plain-pied, conservé et surélevé.</p></li>
+          <li><button type="button"><img src="img/azlaf-plan-etage.webp" width="1800" height="1234" loading="lazy" alt="Plan de l'étage créé"></button><span class="k">Plan de l'étage</span><p>L'étage ajouté, organisé autour d'une circulation unique.</p></li>
+          <li><button type="button"><img src="img/azlaf-coupe.webp" width="2000" height="697" loading="lazy" alt="Coupe du bâtiment surélevé"></button><span class="k">Coupe</span><p>Le nouvel étage posé sur le niveau existant.</p></li>
+          <li><button type="button"><img class="ph" src="img/azlaf-front.webp" width="1800" height="1012" loading="lazy" alt="Rendu du centre surélevé"></button><span class="k">Proposition</span><p>Une façade sobre, à l'échelle de la rue.</p></li>
+        </ol>
+      </div>
       <div class="strip">
-        <button type="button"><figure style="margin:0"><img src="img/cmc-street.webp" width="1500" height="500" loading="lazy" alt="Façade de la Cité des Métiers depuis la rue"><figcaption>Depuis la rue</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/cmc-wide.webp" width="1500" height="485" loading="lazy" alt="Vue d'ensemble avec les champs pédagogiques"><figcaption>Champs pédagogiques</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/cmc-vocations.webp" width="674" height="552" loading="lazy" alt="Schéma des vocations du quartier Timdiqine"><figcaption>Vocations du quartier</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/cmc-exploded.webp" width="1400" height="927" loading="lazy" alt="Axonométrie éclatée : zinc, bois, verre, charpente métallique"><figcaption>Système constructif</figcaption></figure></button>
+        <button type="button"><figure style="margin:0"><img src="img/azlaf-street.webp" width="1500" height="1038" loading="lazy" alt="Façade principale et clôture"><figcaption>Façade sur rue</figcaption></figure></button>
+        <button type="button"><figure style="margin:0"><img src="img/azlaf-aerial.webp" width="1500" height="843" loading="lazy" alt="Vue aérienne avec panneaux solaires"><figcaption>Vue aérienne</figcaption></figure></button>
+        <button type="button"><figure style="margin:0"><img src="img/azlaf-garden.webp" width="1500" height="843" loading="lazy" alt="Jardin et façade latérale"><figcaption>Jardin</figcaption></figure></button>
+        <button type="button"><figure style="margin:0"><img src="img/azlaf-pool.webp" width="1000" height="562" loading="lazy" alt="Espace extérieur avec bassin"><figcaption>Bassin</figcaption></figure></button>
+        <button type="button"><figure style="margin:0"><img src="img/azlaf-interior.webp" width="1000" height="562" loading="lazy" alt="Hall d'accueil intérieur"><figcaption>Hall d'accueil</figcaption></figure></button>
       </div>
     </article>
 
@@ -554,7 +618,7 @@ p{margin:0}
       </header>
       <figure class="view"><img src="img/chaouen-aerial.webp" width="1600" height="913" loading="lazy" alt="Vue aérienne de l'éco-village"><span class="zoom">Agrandir</span></figure>
       <div class="pbody">
-        <div class="ptext rv">
+        <div class="ptext">
           <p>Ici le visiteur ne regarde pas Chefchaouen de loin : il y participe. Les habitants accueillent, animent les ateliers et transmettent leurs savoir-faire. L'éco-village est pensé comme un lieu d'échange et de solidarité plutôt que comme un hôtel.</p>
           <p>La médina, sa végétation et son bleu sont le point de départ. Pisé, pierre, bois et brique sont réinterprétés dans une architecture contemporaine, avec un dossier technique complet : menuiseries, électricité, plomberie et détail de toiture.</p>
           <details class="more"><summary>Les idées clés du projet</summary>
@@ -566,7 +630,7 @@ p{margin:0}
           </ul>
           </details>
         </div>
-        <dl class="cartouche rv">
+        <dl class="cartouche">
           <div><dt>Lieu</dt><dd>Chefchaouen, Rif</dd></div>
           <div><dt>Date</dt><dd>Semestre 6 · juin 2024</dd></div>
           <div><dt>Programme</dt><dd>Logements, restaurant, ateliers d'artisanat</dd></div>
@@ -584,14 +648,57 @@ p{margin:0}
       </div>
     </article>
 
-    <!-- 04 BMCE -->
+    <!-- 04 CMC -->
+    <article class="planche" id="p-cmc" aria-labelledby="t2">
+      <header class="ph rv">
+        <div><p class="no">Planche 04 / 06 · Équipement de formation</p><h3 id="t2">Cité des Métiers et des Compétences</h3><p class="sub">Quartier Timdiqine, Ifrane</p></div>
+        <div class="tabs" role="group" aria-label="Vues du projet">
+          <button type="button" aria-pressed="true" data-src="img/cmc-aerial.webp" data-alt="Vue aérienne de la Cité des Métiers">Rendu</button>
+          <button type="button" aria-pressed="false" data-src="img/cmc-plan.webp" data-draw data-alt="Plan d'ensemble">Plan</button>
+          <button type="button" aria-pressed="false" data-src="img/cmc-section.webp" data-draw data-alt="Coupe">Coupe</button>
+          <button type="button" aria-pressed="false" data-src="img/cmc-exploded.webp" data-draw data-alt="Axonométrie éclatée">Éclaté</button>
+        </div>
+      </header>
+      <figure class="view"><img src="img/cmc-aerial.webp" width="1536" height="882" loading="lazy" alt="Vue aérienne de la Cité des Métiers"><span class="zoom">Agrandir</span></figure>
+      <div class="pbody">
+        <div class="ptext">
+          <p>Le projet s'inscrit dans un plan urbain pour le quartier Timdiqine : meilleures connexions routières, accès hiérarchisés, valorisation du Souk El Had, pôle de sports de neige et grand parc urbain. La Cité des Métiers en est la pièce centrale, avec cinq filières utiles à l'économie de la région.</p>
+          <p>Les pavillons reprennent la palette de couleurs et de matériaux d'Ifrane, pour qu'un équipement contemporain reste chez lui dans cette ville de montagne.</p>
+          <details class="more"><summary>Les idées clés du projet</summary>
+          <ul class="moves">
+            <li><b>Filières</b><span>Agriculture, tourisme, artisanat, santé et sport, avec internat, médiathèque et amphithéâtre.</span></li>
+            <li><b>Neige</b><span>Toitures pentues de 30° à 50° pour évacuer la neige et éviter surcharges et infiltrations.</span></li>
+            <li><b>Lumière</b><span>Verre et métal là où les ateliers et salles demandent beaucoup de jour.</span></li>
+            <li><b>Orientation</b><span>Une signalétique claire et hiérarchisée pour se repérer sans hésiter.</span></li>
+          </ul>
+          </details>
+        </div>
+        <dl class="cartouche">
+          <div><dt>Lieu</dt><dd>Timdiqine, Ifrane</dd></div>
+          <div><dt>Date</dt><dd>Semestre 9 · janvier 2026</dd></div>
+          <div><dt>Programme</dt><dd>Centre de formation et internat</dd></div>
+          <div><dt>Cadre</dt><dd>Projet académique</dd></div>
+          <div class="wide"><dt>Coordonnées</dt><dd class="north"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="none" stroke="currentColor" stroke-width="1"/><path d="M13 3 L17 19 L13 15 L9 19 Z" fill="currentColor"/></svg>33°32′N 5°06′W</dd></div>
+          <div class="wide"><dt>Travail</dt><dd>Individuel, avec le suivi des enseignants de l'atelier</dd></div>
+          <div class="wide"><dt>Outils</dt><dd class="tools"><span>Archicad</span><span>SketchUp</span><span>V-Ray</span><span>Photoshop</span><span>Illustrator</span></dd></div>
+        </dl>
+      </div>
+      <div class="strip">
+        <button type="button"><figure style="margin:0"><img src="img/cmc-street.webp" width="1500" height="500" loading="lazy" alt="Façade de la Cité des Métiers depuis la rue"><figcaption>Depuis la rue</figcaption></figure></button>
+        <button type="button"><figure style="margin:0"><img src="img/cmc-wide.webp" width="1500" height="485" loading="lazy" alt="Vue d'ensemble avec les champs pédagogiques"><figcaption>Champs pédagogiques</figcaption></figure></button>
+        <button type="button"><figure style="margin:0"><img src="img/cmc-vocations.webp" width="674" height="552" loading="lazy" alt="Schéma des vocations du quartier Timdiqine"><figcaption>Vocations du quartier</figcaption></figure></button>
+        <button type="button"><figure style="margin:0"><img src="img/cmc-exploded.webp" width="1400" height="927" loading="lazy" alt="Axonométrie éclatée : zinc, bois, verre, charpente métallique"><figcaption>Système constructif</figcaption></figure></button>
+      </div>
+    </article>
+
+    <!-- 05 BMCE -->
     <article class="planche" id="p-bmce" aria-labelledby="t4">
       <header class="ph rv">
-        <div><p class="no">Planche 04 / 06 · Architecture intérieure</p><h3 id="t4">Agence Bank of Africa</h3><p class="sub">Exercice d'architecture intérieure · espace d'accueil bancaire</p></div>
+        <div><p class="no">Planche 05 / 06 · Architecture intérieure</p><h3 id="t4">Agence Bank of Africa</h3><p class="sub">Exercice d'architecture intérieure · espace d'accueil bancaire</p></div>
       </header>
       <figure class="view"><img src="img/bmce-lobby.webp" width="1600" height="913" loading="lazy" alt="Hall d'accueil de l'agence bancaire, bleu et bois"><span class="zoom">Agrandir</span></figure>
       <div class="pbody">
-        <div class="ptext rv">
+        <div class="ptext">
           <p>Une agence bancaire où l'on s'oriente sans demander son chemin. Après le sas de sécurité, accessible par escalier ou rampe PMR, le comptoir d'accueil distribue les parcours : guichets et salles de conseil d'un côté, salon d'attente et mur d'information de l'autre, services regroupés en périphérie.</p>
           <p>L'identité de la marque guide la matière : le bleu institutionnel, adouci par le noyer et le marbre blanc. Le projet va jusqu'aux plans d'électricité et de faux plafond et au mobilier dessiné sur mesure.</p>
           <details class="more"><summary>Les idées clés du projet</summary>
@@ -603,7 +710,7 @@ p{margin:0}
           </ul>
           </details>
         </div>
-        <dl class="cartouche rv">
+        <dl class="cartouche">
           <div><dt>Lieu</dt><dd>Non défini (exercice)</dd></div>
           <div><dt>Date</dt><dd>Semestre 9 · janvier 2026</dd></div>
           <div><dt>Surface</dt><dd>≈ 240 m² d'accueil</dd></div>
@@ -621,10 +728,10 @@ p{margin:0}
       </div>
     </article>
 
-    <!-- 05 FIGUIG -->
+    <!-- 06 FIGUIG -->
     <article class="planche" id="p-figuig" aria-labelledby="t5">
       <header class="ph rv">
-        <div><p class="no">Planche 05 / 06 · Consultation architecturale</p><h3 id="t5">Centre d'accueil de Figuig</h3><p class="sub">Boulevard Hassan II, Figuig</p></div>
+        <div><p class="no">Planche 06 / 06 · Consultation en agence</p><h3 id="t5">Centre d'accueil de Figuig</h3><p class="sub">Boulevard Hassan II, Figuig</p></div>
         <div class="tabs" role="group" aria-label="Vues du projet">
           <button type="button" aria-pressed="true" data-src="img/figuig-facade.webp" data-alt="Façade du centre d'accueil">Façade</button>
           <button type="button" aria-pressed="false" data-src="img/figuig-palms.webp" data-alt="Le centre vu depuis la palmeraie">Palmeraie</button>
@@ -633,7 +740,7 @@ p{margin:0}
       </header>
       <figure class="view"><img src="img/figuig-facade.webp" width="1600" height="914" loading="lazy" alt="Façade du centre d'accueil"><span class="zoom">Agrandir</span></figure>
       <div class="pbody">
-        <div class="ptext rv">
+        <div class="ptext">
           <p>Un projet réel, traité chez Frouga Design pendant mon premier stage en agence : la consultation pour la reconstruction du centre d'accueil de Figuig, juste à côté d'une maison de jeunes récemment rénovée. Les deux équipements partagent leurs ressources et forment un pôle pour la jeunesse de la ville, entre sport, formation et ateliers.</p>
           <p>La façade reprend les arcades et les motifs géométriques de l'architecture locale, en brique et enduit, dans un jeu de volumes contemporain.</p>
           <details class="more"><summary>Les idées clés du projet</summary>
@@ -645,13 +752,14 @@ p{margin:0}
           </ul>
           </details>
         </div>
-        <dl class="cartouche rv">
+        <dl class="cartouche">
           <div><dt>Lieu</dt><dd>Figuig, Oriental</dd></div>
           <div><dt>Date</dt><dd>Août 2024</dd></div>
           <div><dt>Programme</dt><dd>Hébergement et accueil des jeunes</dd></div>
           <div><dt>Cadre</dt><dd>Consultation publique</dd></div>
           <div class="wide"><dt>Coordonnées</dt><dd class="north"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="none" stroke="currentColor" stroke-width="1"/><path d="M13 3 L17 19 L13 15 L9 19 Z" fill="currentColor"/></svg>32°07′N 1°14′W</dd></div>
-          <div class="wide"><dt>Travail</dt><dd>Chez Frouga Design, pendant mon premier stage : conception et production des pièces</dd></div>
+          <div class="wide"><dt>Agence</dt><dd>Frouga Design, premier stage en agence</dd></div>
+          <div class="wide"><dt>Ma contribution</dt><dd>Propositions de conception et production des pièces graphiques</dd></div>
           <div class="wide"><dt>Outils</dt><dd class="tools"><span>Archicad</span><span>SketchUp</span><span>V-Ray</span><span>Photoshop</span><span>Illustrator</span></dd></div>
         </dl>
       </div>
@@ -662,61 +770,14 @@ p{margin:0}
         <button type="button"><figure style="margin:0"><img src="img/figuig-site.webp" width="1200" height="654" loading="lazy" alt="Vue aérienne du site et de la maison de jeunes"><figcaption>Site</figcaption></figure></button>
       </div>
     </article>
-
-    <!-- 06 AZLAF -->
-    <article class="planche" id="p-azlaf" aria-labelledby="t6">
-      <header class="ph rv">
-        <div><p class="no">Planche 06 / 06 · Consultation remportée</p><h3 id="t6">Centre pour personnes à besoins spécifiques</h3><p class="sub">Surélévation et aménagement · Azlaf, province de Driouch</p></div>
-        <div class="tabs" role="group" aria-label="Vues du projet">
-          <button type="button" aria-pressed="true" data-src="img/azlaf-access.webp" data-alt="Entrée du centre, parcours accessible en fauteuil">Rendu</button>
-          <button type="button" aria-pressed="false" data-src="img/azlaf-existing.webp" data-alt="Le bâtiment existant de plain-pied, avant intervention">Existant</button>
-          <button type="button" aria-pressed="false" data-src="img/azlaf-plan-rdc.webp" data-draw data-alt="Plan du rez-de-chaussée">Plan RDC</button>
-          <button type="button" aria-pressed="false" data-src="img/azlaf-plan-etage.webp" data-draw data-alt="Plan de l'étage créé">Plan étage</button>
-          <button type="button" aria-pressed="false" data-src="img/azlaf-facade.webp" data-draw data-alt="Façade principale">Façade</button>
-          <button type="button" aria-pressed="false" data-src="img/azlaf-coupe.webp" data-draw data-alt="Coupe">Coupe</button>
-        </div>
-      </header>
-      <figure class="view"><img src="img/azlaf-access.webp" width="1800" height="1012" loading="lazy" alt="Entrée du centre, parcours accessible en fauteuil"><span class="zoom">Agrandir</span></figure>
-      <div class="pbody">
-        <div class="ptext rv">
-          <p>Un centre existant de plain-pied, à agrandir d'un étage et à réaménager pour mieux accueillir et accompagner les personnes à besoins spécifiques. La consultation a été remportée par Kouchtir Architectures, où j'ai travaillé sur le dossier.</p>
-          <p>Pour tenir le budget, l'architecte a demandé une écriture sobre, sans ornement. Le projet mise donc sur la clarté des parcours, l'accessibilité et des matériaux économiques et durables. Le dossier couvre l'état des lieux, les plans, les façades, la coupe, les rendus, le phasage des études et l'estimation.</p>
-          <details class="more"><summary>Les idées clés du projet</summary>
-          <ul class="moves">
-            <li><b>Existant</b><span>Une surélévation qui réutilise la structure en place plutôt que de reconstruire.</span></li>
-            <li><b>Accessibilité</b><span>Des circulations fluides et sûres, praticables en fauteuil sur tout le parcours.</span></li>
-            <li><b>Sobriété</b><span>Des façades simples et des matériaux faciles à entretenir, pour réduire le coût.</span></li>
-            <li><b>Énergie</b><span>Panneaux solaires en toiture et choix adaptés au climat local, froid l'hiver et chaud l'été.</span></li>
-          </ul>
-          </details>
-        </div>
-        <dl class="cartouche rv">
-          <div><dt>Lieu</dt><dd>Azlaf, province de Driouch</dd></div>
-          <div><dt>Date</dt><dd>Août 2025</dd></div>
-          <div><dt>Programme</dt><dd>Centre d'accueil et d'accompagnement</dd></div>
-          <div><dt>Cadre</dt><dd>Consultation publique, remportée</dd></div>
-          <div class="wide"><dt>Intervention</dt><dd>Surélévation d'un étage et réaménagement</dd></div>
-          <div class="wide"><dt>Travail</dt><dd>Chez Kouchtir Architectures : conception et production des pièces</dd></div>
-        </dl>
-      </div>
-      <div class="strip">
-        <button type="button"><figure style="margin:0"><img src="img/azlaf-front.webp" width="1800" height="1012" loading="lazy" alt="Vue d'ensemble du centre depuis la rue"><figcaption>Vue d'ensemble</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/azlaf-street.webp" width="1500" height="1038" loading="lazy" alt="Façade principale et clôture"><figcaption>Façade sur rue</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/azlaf-aerial.webp" width="1500" height="843" loading="lazy" alt="Vue aérienne avec panneaux solaires"><figcaption>Vue aérienne</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/azlaf-garden.webp" width="1500" height="843" loading="lazy" alt="Jardin et façade latérale"><figcaption>Jardin</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/azlaf-pool.webp" width="1000" height="562" loading="lazy" alt="Espace extérieur avec bassin"><figcaption>Bassin</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/azlaf-interior.webp" width="1000" height="562" loading="lazy" alt="Hall d'accueil intérieur"><figcaption>Hall d'accueil</figcaption></figure></button>
-        <button type="button"><figure style="margin:0"><img src="img/azlaf-existing-side.webp" width="1280" height="576" loading="lazy" alt="Le bâtiment existant, façade latérale"><figcaption>Existant</figcaption></figure></button>
-      </div>
-    </article>
   </div>
 
   <!-- DESSINS TECHNIQUES -->
   <section class="section wrap" id="dessins" aria-labelledby="h-dessins">
     <div class="kicker"><span class="mono">Production</span></div>
     <h2 class="h2" id="h-dessins" style="margin-bottom:18px">Dessins techniques</h2>
-    <p class="carnet-note rv">Au-delà des rendus, je produis les pièces dont une agence a besoin : plans cotés, calepinage, réseaux, faux plafonds, menuiseries et mobilier sur mesure.</p>
-    <div class="dtgrid rv">
+    <p class="carnet-note">Au-delà des rendus, je produis les pièces dont une agence a besoin : plans cotés, calepinage, réseaux, faux plafonds, menuiseries et mobilier sur mesure.</p>
+    <div class="dtgrid">
         <button type="button" class="dt"><figure><img src="img/tech-bmce-plan.webp" width="2000" height="1246" loading="lazy" alt="Agence Bank of Africa : Plan architectural, calepinage et coupes"><figcaption><span class="mono">Agence Bank of Africa</span><span>Plan architectural, calepinage et coupes</span></figcaption></figure></button>
         <button type="button" class="dt"><figure><img src="img/tech-bmce-elec.webp" width="2000" height="1265" loading="lazy" alt="Agence Bank of Africa : Plan électrique, faux plafond et coupes"><figcaption><span class="mono">Agence Bank of Africa</span><span>Plan électrique, faux plafond et coupes</span></figcaption></figure></button>
         <button type="button" class="dt"><figure><img src="img/tech-bmce-mobilier.webp" width="2000" height="1358" loading="lazy" alt="Agence Bank of Africa : Mobilier sur mesure : comptoir et postes conseillers"><figcaption><span class="mono">Agence Bank of Africa</span><span>Mobilier sur mesure : comptoir et postes conseillers</span></figcaption></figure></button>
@@ -773,7 +834,7 @@ p{margin:0}
           <div class="w"><dt>Tracé</dt><dd>Axe, repères et rectangle d'or 1 : 1,618</dd></div>
         </dl>
       </figure>
-      <div class="about rv">
+      <div class="about">
         <div class="kicker"><span class="mono">Profil</span></div>
         <h2 class="h2" id="h-profil" style="margin-bottom:28px">Observer, dessiner, construire</h2>
         <p>Je m'intéresse aux espaces innovants, fonctionnels et adaptés à leur contexte. Chaque projet commence par le site : son climat, ses matériaux, ses usages et la culture constructive locale.</p>
@@ -792,7 +853,7 @@ p{margin:0}
   <section class="section wrap" id="parcours" aria-labelledby="h-parcours" style="padding-top:0">
     <div class="kicker"><span class="mono">Expérience</span></div>
     <h2 class="h2" id="h-parcours" style="margin-bottom:36px">Agence, chantier, consultations</h2>
-    <ol class="timeline rv">
+    <ol class="timeline">
       <li><span class="when">Oct. 2025</span><span class="what">Stade municipal de football<small>Conception et pièces du dossier de consultation, en agence · Beni Ensar, province de Nador</small></span><span class="tag c">Consultation</span></li>
       <li><span class="when">Sept. 2025</span><span class="what">Dar Al Oumouma<small>Conception et pièces du dossier de consultation, en agence · Berkine, province de Guercif</small></span><span class="tag c">Consultation</span></li>
       <li><span class="when">Août – sept. 2025</span><span class="what">Agence Urbaine de Meknès<small>Suivi de la procédure de gestion des dossiers, passage par les départements juridique et des études · Meknès</small></span><span class="tag">Stage</span></li>
@@ -809,7 +870,7 @@ p{margin:0}
   <section class="section wrap" id="carnet" aria-labelledby="h-carnet" style="padding-top:0">
     <div class="kicker"><span class="mono">Carnet · 2021–2026</span></div>
     <h2 class="h2" id="h-carnet" style="margin-bottom:20px">L'œil, puis la main</h2>
-    <p class="carnet-note rv">Le dessin m'a appris à regarder les détails. Je m'en sers pour explorer une forme en quelques minutes, comprendre une charpente ou expliquer une idée avant de l'ouvrir en 3D.</p>
+    <p class="carnet-note">Le dessin m'a appris à regarder les détails. Je m'en sers pour explorer une forme en quelques minutes, comprendre une charpente ou expliquer une idée avant de l'ouvrir en 3D.</p>
     <div class="carnet">
       <button type="button"><img src="img/sk-charpente.webp" width="467" height="681" loading="lazy" alt="Croquis annoté d'une charpente bois"></button>
       <button type="button"><img src="img/art-still.webp" width="783" height="573" loading="lazy" alt="Nature morte à l'aquarelle : raisins et grenade"></button>
@@ -829,13 +890,13 @@ p{margin:0}
     <div class="wrap section" style="padding-bottom:0">
       <div class="kicker"><span class="mono" style="color:var(--paper);opacity:.7">Contact</span></div>
       <h2 class="h2" id="h-contact">Une place dans <span>votre équipe ?</span></h2>
-      <p class="lead">À la recherche d'un stage de PFE à partir de novembre 2026. Basé à Meknès, mobile dans tout le Maroc, disponible pour un entretien en présentiel ou en visioconférence. Le portfolio complet est téléchargeable en PDF, en haute définition.</p>
-      <div class="cta-row rv">
-        <a class="mail-cta" href="https://drive.google.com/file/d/1IXaNJQfsGT-6OYRjpzVmiHBmmHLGv0DJ/view?usp=sharing" target="_blank" rel="noopener">Télécharger le portfolio PDF <span aria-hidden="true">↓</span></a>
+      <p class="lead">À la recherche d'un stage de PFE à partir de novembre 2026, d'une durée à convenir, jusqu'à l'été 2027. Basé à Meknès, mobile dans tout le Maroc, disponible pour un entretien en présentiel ou en visioconférence. Le portfolio complet est disponible en PDF (17 Mo), ainsi qu'en <a href="https://drive.google.com/file/d/1IXaNJQfsGT-6OYRjpzVmiHBmmHLGv0DJ/view?usp=sharing" target="_blank" rel="noopener" style="color:inherit">version haute définition (221 Mo)</a>.</p>
+      <div class="cta-row">
+        <a class="mail-cta" href="yassir-boukhdimi-portfolio.pdf" target="_blank" rel="noopener">Voir le portfolio PDF <span aria-hidden="true">↗</span></a>
         <a class="mail-cta ghost" href="mailto:yboukhdimi2003@gmail.com?subject=Stage%20PFE%20%C2%B7%20Yassir%20Boukhdimi&amp;body=Bonjour%20Yassir%2C%0A%0A%0A%0ACordialement%2C%0A%5BPr%C3%A9nom%20Nom%5D%0A%5BAgence%5D%0A%5BT%C3%A9l%C3%A9phone%5D">Écrire à Yassir <span aria-hidden="true">→</span></a>
       </div>
-      <p class="mail-hint mono">Portfolio complet, 2024–2026 · le bouton e-mail ouvre un message prêt à compléter</p>
-      <dl class="contact-grid rv">
+      <p class="mail-hint mono">Portfolio complet 2024–2026, 17 Mo · le bouton e-mail ouvre un message prêt à compléter</p>
+      <dl class="contact-grid">
         <div><dt>E-mail</dt><dd id="c-mail">yboukhdimi2003@gmail.com</dd><button class="cbtn" type="button" data-copy="c-mail">Copier l'adresse</button></div>
         <div><dt>Téléphone · WhatsApp</dt><dd id="c-tel">+212 6 69 96 06 59</dd><button class="cbtn" type="button" data-copy="c-tel">Copier le numéro</button></div>
         <div><dt>LinkedIn</dt><dd>linkedin.com/in/yassir-boukhdimi</dd><a class="cbtn" href="https://www.linkedin.com/in/yassir-boukhdimi-62125428b/" target="_blank" rel="noopener">Voir le profil ↗</a></div>
@@ -891,7 +952,11 @@ p{margin:0}
   });
   var carnet = document.querySelectorAll('.carnet button');
   carnet.forEach(function(b,k){ b.addEventListener('click', function(){ open(collect(document.querySelectorAll('.carnet img')), k, b) }) });
+  var nv=document.querySelector('.nav'),br=document.querySelector('.bar');
+  function nvEnd(){ if(br&&nv) br.classList.toggle('end', nv.scrollLeft+nv.clientWidth>=nv.scrollWidth-4); }
+  if(nv){ nv.addEventListener('scroll',nvEnd,{passive:true}); window.addEventListener('resize',nvEnd); nvEnd(); }
   var pf=document.querySelector('.pframe'); if(pf) pf.addEventListener('click',function(){pf.classList.toggle('open')});
+  document.querySelectorAll('.demo').forEach(function(d){ var bs=d.querySelectorAll('button'); bs.forEach(function(b,k){ b.addEventListener('click',function(){ open(collect(d.querySelectorAll('img')),k,b) }) }) });
   var dts = document.querySelectorAll('.dt');
   dts.forEach(function(b,k){ b.addEventListener('click', function(){ open(collect(document.querySelectorAll('.dt img')), k, b) }) });
   var scales = document.querySelectorAll('.scales img');
@@ -908,7 +973,7 @@ p{margin:0}
   });
 
   // Section active dans le menu
-  var links = document.querySelectorAll('.nav a[href^="#"]');
+  var links = document.querySelectorAll('.nav a[href^="#"], .bar .cta');
   var targets = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')) });
   if ('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(es){
